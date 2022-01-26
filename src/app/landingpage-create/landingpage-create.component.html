@@ -1,0 +1,17 @@
+<div class="spe-wrapper">
+    <div class="menu-bar">
+        <ul cdkDropList [cdkDropListConnectedTo]="dropListConnectedTo">
+            <li cdkDrag *ngFor="let menuItem of listMenu" [cdkDragData]="menuItem.dragData" (cdkDragStarted)="dragStart()">
+                {{menuItem.icon}} {{menuItem.name}}
+                <!-- <hr>{{dropListConnectedTo}} -->
+            </li>
+        </ul>
+    </div>
+    <div cdkDropList class="landingpage-builder" id="tweb-column-tree" (cdkDropListDropped)="drop($event)">
+        <div #landingPageBody>
+
+        </div>
+        <!-- <app-column></app-column>
+        <app-column></app-column> -->
+    </div>
+</div>

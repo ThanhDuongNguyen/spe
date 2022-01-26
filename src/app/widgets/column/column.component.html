@@ -1,0 +1,14 @@
+<li cdkDrag (cdkDragStarted)="dragStartTest($event)" [cdkDragData]="dragData" class="column" id="column{{currIndex}}">
+
+    <div *cdkDragPreview class="column-preview"></div>
+    <div id="column-preview{{currIndex}}" class="example-custom-placeholder" *cdkDragPlaceholder></div>
+
+    Column {{currIndex}} {{droplistId}}
+    <!-- <p>{{dropListConnectedTo}}</p> -->
+    <div class="drop-zone" #column cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="dropListConnectedTo" [cdkDropListData]="placeHolderList">
+        <ng-template #dynamicComponent></ng-template>
+    </div>
+</li>
+<!-- <div class="column" cdkDropList [id]="'drop-zone'">
+    Column
+</div> -->
