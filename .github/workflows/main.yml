@@ -22,6 +22,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+            aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 554735218733.dkr.ecr.ap-southeast-1.amazonaws.com
+            docker pull 554735218733.dkr.ecr.ap-southeast-1.amazonaws.com/test:latest
 
       
